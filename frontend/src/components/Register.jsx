@@ -47,18 +47,27 @@ export const Register = () => {
   return (
     <>
      <h2>Register Form</h2>
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit} className='needs-validation' noValidate>
         <div>
           <label htmlFor="">Name:</label>
-          <input type="text" name='name' value={formData.name} onChange={handleChange} />
+          <input type="text" name='name' value={formData.name} onChange={handleChange} required/>
+           <div className="invalid-feedback">
+             Please enter a username
+          </div>
         </div>
         <div>
           <label htmlFor="">Email:</label>
-          <input type="email" name='email' value={formData.email} onChange={handleChange} />
+          <input type="email" name='email' value={formData.email} onChange={handleChange} required />
+          <div className="invalid-feedback">
+             Please enter a valid email
+          </div>
         </div>
         <div>
           <label htmlFor="">Password:</label>
-          <input type="password" name='password' value={formData.password} onChange={handleChange} />
+          <input type="password" name='password' value={formData.password} onChange={handleChange} required/>
+          <div className="invalid-feedback">
+             Please enter a strong passowrd
+          </div>
         </div>
         <button type='submit'>Register</button>
      </form>
